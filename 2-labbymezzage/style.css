@@ -1,0 +1,72 @@
+#columncontainer 
+{
+    /*
+    här gjorde jag så att sidan alltid ligger i mitten på sidan
+    genom att sätta en fast bredd men automatiska marginaler
+    åt båda hållen
+    */
+    margin-top              :   50px;
+    margin-right            :   auto;
+    margin-left             :   auto;
+    width                   :   600px;
+}
+body{
+    background              :   #000000;
+}
+h1{
+    text-align              :   center;
+    font-size               :   40px;
+}
+h4{
+    text-align              :   right;
+    font-size               :   12px;
+    padding-top             :   8px;
+}
+main{
+    width                   :   600px;
+    padding                 :   20px;
+    border-top              :   3px solid #999999;
+    border-right            :   4px solid #999999;
+    border-left             :   4px solid #333333;
+    border-bottom           :   3px solid #333333;
+    background-color        :   #777777;
+}  
+article{
+    border-top              :   3px solid #999999;
+    border-right            :   4px solid #999999;
+    border-left             :   4px solid #333333;
+    border-bottom           :   3px solid #333333;
+    background              :   #888888;
+    margin                  :   20px;
+    padding                 :   10px;
+}
+section{
+    border-top              :   2px solid #333333;
+    border-right            :   2px solid #333333;
+    border-left             :   3px solid #777777;
+    border-bottom           :   3px solid #777777;
+    background              :   #FFEA00;
+    padding                 :   10px;
+}
+form{
+    background              :   #FFEA00;
+}
+fieldset{
+}
+textarea{
+    float                   :   left;
+    border-top              :   2px solid #333333;
+    border-right            :   2px solid #333333;
+    border-left             :   3px solid #777777;
+    border-bottom           :   3px solid #777777;
+    width                   :   98%;
+}
+input{
+    float                   :   right;
+    border-top              :   3px solid #999999;
+    border-right            :   4px solid #999999;
+    border-left             :   4px solid #333333;
+    border-bottom           :   3px solid #333333;
+    background              :   #777777;
+    margin-top              :   10px;
+}

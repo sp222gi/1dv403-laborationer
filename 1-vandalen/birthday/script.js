@@ -2,17 +2,52 @@
 
 window.onload = function(){
 
-	
 	var birthday = function(date){
-		
-
-
-			// Din kod här.
-
-
-
-
+        if(!Date.parse(date.toString())){
+            throw new Error("fel");
+            
+        }
+        //här görs de om till ett format som t.ex kan se ut:
+        //Wed Nov 20 2013 01:00:00 GMT+0100 (W. Europe Standard Time)
+        var today = new Date();
+        var bigDay = new Date(date);
+            
+        bigDay.setFullYear(2013);
+            console.log("Din födelsedag i år: " + bigDay);
+        today.setHours(0);
+        today.setMinutes(0);
+        today.setSeconds(0);
+            console.log("Dagens Datum: " + today);
+        
+        //här anges antal ms per dag
+            var msPerDay = 24 * 60 * 60 * 1000 ;
+        
+        //här räknas den återstående tiden ut i ms
+        var timeLeft = (bigDay.getTime() - today.getTime());
+        
+        //här räknas det ungefärliga antalet dagar kvar
+        var e_daysLeft = timeLeft / msPerDay;
+            
+        //här avrundas antal dagar kvar
+        var daysLeft = Math.floor(e_daysLeft);
+        
+        //här läggs en ny viktig variabel till
+        var correctDaysLeft = daysLeft+365;
+        
+        //här kollas det om den viktiga variablen behövs eller ej
+        if (daysLeft < 0){
+            console.log(correctDaysLeft);
+            return (correctDaysLeft);
+        }
+        else if (daysLeft >= 0){
+            console.log(daysLeft);
+            return (daysLeft);
+        }
+        else{
+            throw new Error("Det verkar orimligt att detta ör ditt födelsedatum");
+        }
 	};
+
 	// ------------------------------------------------------------------------------
 
 
@@ -28,7 +63,7 @@ window.onload = function(){
 		p.classList.remove( "error");
 
 		try {
-			var answer = birthday(input.value) // Läser in texten från textrutan och skickar till funktionen "convertString"
+			var answer = birthday(input.value); // Läser in texten från textrutan och skickar till funktionen "convertString"
 			var message;
 			switch (answer){
 				case 0: message = "Grattis på födelsedagen!";
@@ -46,7 +81,4 @@ window.onload = function(){
 		}
 	
 	});
-
-
-
 };
